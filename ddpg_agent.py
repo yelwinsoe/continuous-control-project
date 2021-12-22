@@ -45,7 +45,7 @@ class Agent():
         self.critic_target = Critic(state_size, action_size, random_seed).to(device)
         self.critic_optimizer = optim.Adam(self.critic_local.parameters(), lr=LR_CRITIC, weight_decay=WEIGHT_DECAY)
 
-        # Noise process
+        # Processing noise
         self.noise = OUNoise((n_agents, action_size), random_seed)
 
         # Replay memory
@@ -54,9 +54,7 @@ class Agent():
     def step(self, states, actions, rewards, next_states, dones):
         """Save experience in replay memory, and use random sample from buffer to learn."""
         # Save experience / reward
-        
-        #for i in range(len(states)):
-        #    self.memory.add(states[i, :], actions[i, :], rewards[i], next_states[i, :], dones[i])
+
         for state, action, reward, next_state, done in zip(states, actions, rewards, next_states, dones):
             self.memory.add(state, action, reward, next_state, done)
 
