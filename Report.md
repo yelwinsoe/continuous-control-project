@@ -24,7 +24,7 @@ The agent is being trained based on the following learning parameters.
 - Weight decay = 0
 
 ## Reward plot
-#### The environment were solved in 25 episodes.
+#### The environment were solved in 10 episodes.
 ![Episodes](episodes.png)
 #### Rewards Graph
 ![Reward](rewards.png)
